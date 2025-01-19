@@ -1,5 +1,5 @@
-type MemberType = {
-  id: number;
+export type MemberType = {
+  id: number | string;
   name: string;
   title: string;
   previousId: number;
