@@ -17,6 +17,12 @@ export default {
       colors: {
         blue: "#3178CC",
         green: "#8BCA5E",
+        pink: "#D84A9E",
+      },
+      fontSize: {
+        "heading-1": ["84px", { lineHeight: "1.2", fontWeight: "500" }],
+        "heading-2": ["56px", { lineHeight: "1.3", fontWeight: "500" }],
+        "heading-3": ["32px", { lineHeight: "1.4", fontWeight: "700" }],
       },
     },
   },

@@ -69,45 +69,51 @@ const Diamond = () => {
         {/* 右方菱形 - 仙人掌 */}
         <div className="absolute top-6 right-6 md:top-8 md:right-8 xl:top-10 xl:right-10">
           <div className="relative bg-[#93B6E1] w-[120px] h-[120px] md:w-40 md:h-40 xl:w-[190px] xl:h-[190px] rotate-45 overflow-hidden ">
-            <Image
-              src="/images/cactus.svg"
-              width={300}
-              height={300}
-              alt="cactus"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-45 w-full h-auto"
-              priority
-              ref={cactusRef}
-            />
+            <div className="absolute top-[55%] left-[55%] -translate-x-1/2 -translate-y-1/2 -rotate-45 w-[120%] h-[120%]">
+              <Image
+                src="/images/cactus.svg"
+                width={300}
+                height={300}
+                alt="girl"
+                className="w-full h-full object-contain"
+                priority
+                ref={girlRef}
+              />
+            </div>
           </div>
         </div>
 
         {/* 左方菱形 - 女孩 */}
-        <div className="absolute top-6 left-6  md:top-8 md:left-8 xl:top-10 xl:left-10">
+        <div className="absolute top-6 left-6 md:top-8 md:left-8 xl:top-10 xl:left-10">
           <div className="relative bg-[#93B6E1] w-[120px] h-[120px] md:w-40 md:h-40 xl:w-[190px] xl:h-[190px] rotate-45 overflow-hidden ">
-            <Image
-              src="/images/girl.svg"
-              width={300}
-              height={300}
-              alt="girl"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-45 w-full h-auto"
-              priority
-              ref={girlRef}
-            />
+            <div className="absolute top-3/4 left-[85%] -translate-x-1/2 -translate-y-1/2 -rotate-45 w-[200%] h-[200%]">
+              <Image
+                src="/images/girl.svg"
+                width={300}
+                height={300}
+                alt="girl"
+                className="w-full h-full object-contain"
+                priority
+                ref={girlRef}
+              />
+            </div>
           </div>
         </div>
 
         {/* 下方菱形 - 花 */}
         <div className="absolute bottom-6 md:bottom-8 xl:bottom-10 left-1/2 -translate-x-1/2">
           <div className="relative bg-[#93B6E1] w-[120px] h-[120px] md:w-40 md:h-40 xl:w-[190px] xl:h-[190px] rotate-45 overflow-hidden ">
-            <Image
-              src="/images/flower.svg"
-              width={300}
-              height={300}
-              alt="flower"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-45 w-full h-auto"
-              priority
-              ref={flowerRef}
-            />
+            <div className="absolute top-2/3 left-[60%] -translate-x-1/2 -translate-y-1/2 -rotate-45 w-[150%] h-[150%]">
+              <Image
+                src="/images/flower.svg"
+                width={300}
+                height={300}
+                alt="girl"
+                className="w-full h-full object-contain"
+                priority
+                ref={girlRef}
+              />
+            </div>
           </div>
         </div>
       </div>

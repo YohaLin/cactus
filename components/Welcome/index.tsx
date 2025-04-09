@@ -3,10 +3,11 @@ import React from "react";
 import Diamond from "./Diamond";
 import Clouds from "./Clouds";
 import Grass from "./Grass";
+import Container from "@/layouts/Container";
 
 const Welcome: React.FC = () => {
   return (
-    <div className="w-full h-[640px] xl:h-[780px] relative overflow-hidden">
+    <Container className="h-[640px] xl:h-[780px]">
       {/* 菱形區塊佈局 */}
       <Diamond />
 
@@ -15,7 +16,7 @@ const Welcome: React.FC = () => {
 
       {/* 草地 */}
       <Grass />
-    </div>
+    </Container>
   );
 };
 
