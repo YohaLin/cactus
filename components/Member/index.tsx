@@ -21,7 +21,7 @@ const Member = () => {
   }
   
   return (
-    <div className="w-full h-full overflow-hidden">
+    <div className="w-full h-full overflow-hidden member">
       <h1 className="relative text-[48px] lg:text-[120px] uppercase pl-3">
         Team Members
       </h1>

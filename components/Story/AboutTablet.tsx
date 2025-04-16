@@ -11,12 +11,12 @@ import clsx from "clsx";
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutMobile = () => {
-  const containerRef = useRef(null);
-  const textRef = useRef(null);
-  const timelineBarRef = useRef(null);
-  const timelineContainerRef = useRef(null);
-  const girlImageRef = useRef(null);
-  const keepGoingRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const textRef = useRef<HTMLDivElement | null>(null);
+  const timelineBarRef = useRef<HTMLDivElement | null>(null);
+  const timelineContainerRef = useRef<HTMLDivElement | null>(null);
+  const girlImageRef = useRef<HTMLDivElement | null>(null);
+  const keepGoingRef = useRef<HTMLDivElement | null>(null);
 
   useGSAP(
     () => {
@@ -33,7 +33,7 @@ const AboutMobile = () => {
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top top",
-            end: "+=3000", // 增加滾動長度
+            end: "+=2500", // 增加滾動長度
             scrub: 1, // 平滑滾動效果
             pin: true, // 固定元素在視口中
             pinSpacing: true,
@@ -41,70 +41,69 @@ const AboutMobile = () => {
           },
         });
 
-        mainTimeline.to(
-          textRef.current,
-          {
-            y: "-100%",
-            opacity: 0,
-            duration: 0.5,
-            ease: "power1.inOut",
-          },
-          0
-        );
-
-        mainTimeline.fromTo(
-          timelineContainerRef.current,
-          {
-            y: "100%",
-            opacity: 0,
-            ease: "power1.inOut",
-          },
-          {
-            y: "0%",
-            opacity: 1,
-            duration: 0.5,
-            ease: "power1.inOut",
-          },
-          0
-        );
-
-        mainTimeline.to(
-          [girlImageRef.current, keepGoingRef.current],
-          {
-            x: "-100vw",
-            duration: 0.5,
-            ease: "power1.inOut",
-          },
-          0.5
-        );
-
-        mainTimeline.fromTo(
-          timelineContainerRef.current,
-          {
-            x: "26%",
-            ease: "power1.inOut",
-            delay: 0.2,
-          },
-          {
-            x: "-50%",
-            duration: 0.5,
-            ease: "power1.inOut",
-          },
-          0.5
-        );
-
-        mainTimeline.fromTo(
-          timelineBarRef.current,
-          {
-            width: "0%",
-          },
-          {
-            width: "100%",
-            duration: 0.5,
-            ease: "none",
-          },
-          0.5
-        );
+        mainTimeline
+          .to(
+            textRef.current,
+            {
+              y: "-100%",
+              opacity: 0,
+              duration: 0.5,
+              ease: "power1.inOut",
+            },
+            0
+          )
+          .fromTo(
+            timelineContainerRef.current,
+            {
+              y: "100%",
+              opacity: 0,
+              ease: "power1.inOut",
+            },
+            {
+              y: "0%",
+              opacity: 1,
+              duration: 0.5,
+              ease: "power1.inOut",
+            },
+            0
+          )
+          .to(
+            [girlImageRef.current, keepGoingRef.current],
+            {
+              x: "-100vw",
+              duration: 0.5,
+              ease: "power1.inOut",
+            },
+            0.5
+          )
+          .fromTo(
+            timelineContainerRef.current,
+            {
+              x: "26%",
+              ease: "power1.inOut",
+              delay: 0.2,
+            },
+            {
+              x:
+                containerRef.current!.offsetWidth -
+                timelineContainerRef.current!.offsetWidth,
+              duration: 0.5,
+              ease: "power1.inOut",
+            },
+            0.5
+          )
+          .fromTo(
+            timelineBarRef.current,
+            {
+              width: "0%",
+            },
+            {
+              width: "100%",
+              duration: 0.5,
+              ease: "none",
+            },
+            0.5
+          );
       }
     },
     { scope: ".container-ref" }
@@ -122,13 +121,13 @@ const AboutMobile = () => {
         </p>
       </div>
       {/* 描述文字和時間線的容器 */}
-      <div className="flex flex-col gap-2 flex-1 relative overflow-hidden bg-blue border border-red-700">
+      <div className="flex flex-col gap-2 flex-1 relative overflow-hidden bg-blue">
         {/* 描述文字 - 會向上滑動 */}
         <div
           ref={textRef}
-          className="flex justify-end xl:justify-start md:items-start w-full p-4 md:p-6 xl:pr-10 pt-10 border border-red-700"
+          className="flex justify-end xl:justify-start items-center w-full h-full p-4 md:p-6 xl:pr-10 pt-10"
         >
-          <p className="w-full md:w-[60%] max-w-[800px] text-sm md:text-base xl:text-[22px] xl:leading-7 xl:ml-[40%] font-bold text-white">
+          <p className="w-full h-fit md:w-[60%] max-w-[800px] text-sm md:text-base xl:text-[22px] xl:leading-7 xl:ml-[40%] font-bold text-white">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry standard dummy text ever
             since the 1500s, when an unknown printer took a galley of type and
@@ -150,7 +149,7 @@ const AboutMobile = () => {
         {/* 時間線區域 - 固定在下方 */}
         <div
           ref={timelineContainerRef}
-          className="absolute top-0 z-30 w-[calc(30vw*5)] h-full flex flex-col items-start border border-red-700"
+          className="absolute top-0 z-30 w-[calc(30vw*5)] h-full flex flex-col items-start"
         >
           {/* 背景線 */}
           <div className="absolute top-1/2 -translate-y-1/2 w-[calc(30vw*5)] h-2 bg-white"></div>
@@ -158,7 +157,7 @@ const AboutMobile = () => {
           {/* 動態延伸的線 */}
           <div
             ref={timelineBarRef}
-            className="absolute top-1/2 -translate-y-1/2 left-1 w-[calc(30vw*5)] h-2 bg-pink z-40"
+            className="absolute top-1/2 -translate-y-1/2 left-1 w-[calc(30vw*5)] h-[3px] bg-pink z-40"
           />
 
           {/* 使用 map 渲染所有時間點 */}

@@ -20,7 +20,7 @@ const Story = () => {
   }
 
   return (
-    <Container className="h-fit md:h-[6000px] overflow-hidden container-ref">
+    <Container className="h-fit overflow-hidden container-ref">
       {isMobile && <AboutMobile />}
       {!isMobile && <AboutTablet />}
     </Container>
