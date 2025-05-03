@@ -143,12 +143,12 @@ export const MemberDesktop = () => {
       {/* 詳細資訊 */}
       <div
         className={clsx(
-          "absolute z-10 left-0 w-full h-[calc(100vh-9rem)] bg-[#1f1d1d] opacity-60"
+          "absolute z-10 left-0 w-full h-[calc(100vh-9rem)] bg-white opacity-60"
         )}
       />
       <div
         className={clsx(
-          "absolute z-20 left-0 w-full h-[calc(100vh-9rem)] bg-[#1f1d1d] text-xl detail-bg transform transition-all duration-300",
+          "absolute z-20 left-0 w-full h-[calc(100vh-9rem)] bg-white text-xl detail-bg transform transition-all duration-300",
           {
             "opacity-1": isDetailShowed,
             "opacity-0": !isDetailShowed,
@@ -273,7 +273,7 @@ export const MemberDesktop = () => {
               )}
               <div
                 className={clsx(
-                  "absolute top-0 z-10 w-full h-full bg-black mask",
+                  "absolute top-0 z-10 w-full h-full bg-blue mask",
                   isFirstRender.current && "hidden"
                 )}
               ></div>
@@ -292,7 +292,7 @@ export const MemberDesktop = () => {
           </div>
           <button
             className={clsx(
-              "absolute top-1/2 -left-40 p-2 border-8 text-white rounded-full flex items-center justify-center transition-all duration-300",
+              "absolute top-1/2 -translate-y-1/2 -left-40 p-2 border-8 border-blue text-white rounded-full flex items-center justify-center transition-all duration-300",
               {
                 "translate-x-40 z-10": isDetailShowed,
                 "translate-x-0 z-30": !isDetailShowed,
@@ -300,11 +300,11 @@ export const MemberDesktop = () => {
             )}
             onClick={handlePrevious}
           >
-            <ArrowLeftIcon className="size-24" />
+            <ArrowLeftIcon className="size-24 stroke-blue" />
           </button>
           <button
             className={clsx(
-              "absolute top-1/2 -right-40 p-2 border-8 text-white rounded-full flex items-center justify-center transition-all duration-300",
+              "absolute top-1/2 -translate-y-1/2 -right-40 p-2 border-8 border-blue text-white rounded-full flex items-center justify-center transition-all duration-300",
               {
                 "-translate-x-40 z-10": isDetailShowed,
                 "translate-x-0 z-30": !isDetailShowed,
@@ -312,7 +312,7 @@ export const MemberDesktop = () => {
             )}
             onClick={handleNext}
           >
-            <ArrowRightIcon className="size-24" />
+            <ArrowRightIcon className="size-24 stroke-blue" />
           </button>
         </div>
 

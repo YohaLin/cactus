@@ -61,10 +61,10 @@ const AboutMobile = () => {
   );
 
   return (
-    <div ref={containerRef} className="w-full h-full flex flex-col ">
+    <div ref={containerRef} className="w-full h-full flex flex-col">
       {/* 標題 */}
       <div className="flex items-center w-full h-[10%] md:h-[15%] bg-white">
-        <p className="pl-2 lg:pl-6 uppercase text-heading-3 md:text-heading-2 xl:text-heading-1 text-blue">
+        <p className="pl-2 uppercase text-heading-3 md:text-heading-2 xl:text-heading-1 text-blue">
           our story
         </p>
       </div>

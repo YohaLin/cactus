@@ -1,6 +1,7 @@
 "use client";
 import { MemberDesktop } from "@/components/Member/MemberDesktop";
 import MemberMobile from "@/components/Member/MemberMobile";
+import Container from "@/layouts/Container";
 import { useState, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 
@@ -19,15 +20,15 @@ const Member = () => {
   if (!mounted) {
     return null;
   }
-  
+
   return (
-    <div className="w-full h-full overflow-hidden member">
-      <h1 className="relative text-[48px] lg:text-[120px] uppercase pl-3">
+    <Container className="h-full overflow-hidden member">
+      <p className="relative pl-2 lg:pl-6 uppercase text-heading-3 md:text-heading-2 xl:text-heading-1 text-blue ">
         Team Members
-      </h1>
+      </p>
       {isDesktop && <MemberDesktop />}
       {!isDesktop && <MemberMobile />}
-    </div>
+    </Container>
   );
 };
 
