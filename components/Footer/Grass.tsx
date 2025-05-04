@@ -52,7 +52,7 @@ const Grass = () => {
 
       <div className="absolute z-10 lg:z-20 right-4 lg:right-16 top-8 lg:top-0 w-[120px] lg:w-[180px] xl:w-[220px]">
         <Image
-          src="/images/bluegrass.svg"
+          src="/images/blueGrass.svg"
           width={150}
           height={150}
           alt="藍草"
