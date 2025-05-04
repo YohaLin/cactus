@@ -1,6 +1,7 @@
 import Welcome from "@/components/Welcome";
 import Member from "@/components/Member";
 import Story from "@/components/Story";
+import Footer from "@/components/Footer";
 
 const Home = () => {
   return (
@@ -10,6 +11,8 @@ const Home = () => {
       <Story />
 
       <Member />
+
+      <Footer />
     </div>
   );
 };

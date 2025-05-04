@@ -143,12 +143,12 @@ export const MemberDesktop = () => {
       {/* 詳細資訊 */}
       <div
         className={clsx(
-          "absolute z-10 left-0 w-full h-[calc(100vh-9rem)] bg-white opacity-60"
+          "absolute z-10 left-0 w-full h-[calc(100vw/3/3*4)] bg-white opacity-60"
         )}
       />
       <div
         className={clsx(
-          "absolute z-20 left-0 w-full h-[calc(100vh-9rem)] bg-white text-xl detail-bg transform transition-all duration-300",
+          "absolute z-20 left-0 w-full h-[calc(100vw/3/3*4)] bg-white text-xl detail-bg transform transition-all duration-300",
           {
             "opacity-1": isDetailShowed,
             "opacity-0": !isDetailShowed,
@@ -157,14 +157,14 @@ export const MemberDesktop = () => {
       >
         <div
           className={clsx(
-            "flex flex-col gap-2 w-[50%] pt-20 pl-[calc(100vw/6)] pr-20 detail transform transition-all duration-100 delay-200",
+            "flex flex-col gap-2 w-[50%] h-[calc(100vw/3/3*4)] p-4 pl-20 pr-8 detail transform transition-all duration-100 delay-200 overflow-auto",
             {
               "opacity-1": isDetailShowed,
               "opacity-0": !isDetailShowed,
             }
           )}
         >
-          <p className="whitespace-pre-line leading-10">
+          <p className="whitespace-pre-line leading-8">
             {currentMember?.description}
           </p>
         </div>

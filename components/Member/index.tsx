@@ -10,7 +10,7 @@ import { useMediaQuery } from "react-responsive";
 }
 const Member = () => {
   const [mounted, setMounted] = useState(false);
-  const isDesktop = useMediaQuery({ query: "(min-width: 1028px)" });
+  const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" });
 
   useEffect(() => {
     setMounted(true);

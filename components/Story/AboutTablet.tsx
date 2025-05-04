@@ -79,7 +79,7 @@ const AboutMobile = () => {
           .fromTo(
             timelineContainerRef.current,
             {
-              x: "26%",
+              x: "0%",
               ease: "power1.inOut",
               delay: 0.2,
             },
@@ -149,15 +149,15 @@ const AboutMobile = () => {
         {/* 時間線區域 - 固定在下方 */}
         <div
           ref={timelineContainerRef}
-          className="absolute top-0 z-30 w-[calc(30vw*5)] h-full flex flex-col items-start"
+          className="absolute left-[40%] top-0 z-30 w-[calc(30vw*5+40%)] h-full flex flex-col items-start"
         >
           {/* 背景線 */}
-          <div className="absolute top-1/2 -translate-y-1/2 w-[calc(30vw*5)] h-2 bg-white"></div>
+          <div className="absolute top-1/2 -translate-y-1/2 w-[calc(30vw*5+40%)] h-2 bg-white"></div>
 
           {/* 動態延伸的線 */}
           <div
             ref={timelineBarRef}
-            className="absolute top-1/2 -translate-y-1/2 left-1 w-[calc(30vw*5)] h-[3px] bg-pink z-40"
+            className="absolute top-1/2 -translate-y-1/2 left-1 w-[calc(30vw*5+40%)] h-[3px] bg-pink z-40"
           />
 
           {/* 使用 map 渲染所有時間點 */}
